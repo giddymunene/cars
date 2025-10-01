@@ -1,0 +1,116 @@
+/* Shiny gradient navbar */
+.custom-navbar {
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    color: #fff;
+    padding: 0.7rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Brand logo */
+  .custom-navbar .brand {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .custom-navbar .brand:hover {
+    color: #ffd43b;
+  }
+  
+  /* Links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+  .nav-links a:hover {
+    color: #ffd43b;
+    transform: translateY(-2px);
+  }
+  
+  /* Search bar */
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 25px;
+    padding: 0 10px;
+  }
+  .search-bar input {
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 25px;
+  }
+  .search-bar button {
+    border: none;
+    background: transparent;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #2a5298;
+    padding: 5px 10px;
+    transition: transform 0.2s;
+  }
+  .search-bar button:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Mobile Menu */
+  .menu-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  
+  .mobile-links {
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+    background: #2a5298;
+  }
+  .mobile-links li {
+    margin: 10px 0;
+  }
+  .mobile-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+  }
+  .mobile-links a:hover {
+    color: #ffd43b;
+  }
+  
+  /* Mobile search bar */
+  .search-bar-mobile {
+    display: flex;
+    margin-top: 10px;
+  }
+  .search-bar-mobile input {
+    flex: 1;
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+  }
+  .search-bar-mobile button {
+    background: #ffd43b;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,98 @@
+/* Page container */
+.contact-container {
+    background: #f9fafb;
+    padding: 3rem 1rem;
+    border-radius: 12px;
+  }
+  
+  /* Title & subtitle */
+  .contact-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2563eb;
+  }
+  
+  .contact-header p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: #6b7280;
+  }
+  
+  /* Cards */
+  .contact-card {
+    border: none;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Form */
+  .contact-card .form-label {
+    font-weight: 600;
+    color: #374151;
+  }
+  
+  .contact-card .form-control {
+    border-radius: 8px;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    transition: border-color 0.2s ease;
+  }
+  
+  .contact-card .form-control:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 0.15rem rgba(37, 99, 235, 0.2);
+  }
+  
+  /* Button */
+  .contact-card button {
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 0.75rem;
+  }
+  
+  /* Reviews Section */
+  .reviews-section {
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  .reviews-section h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #16a34a;
+  }
+  
+  .review-card {
+    border: none;
+    border-radius: 12px;
+    background: #ffffff;
+    padding: 1.25rem;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-card p {
+    font-style: italic;
+    color: #374151;
+  }
+  
+  .review-card h6 {
+    margin-top: 0.75rem;
+    font-weight: 600;
+    color: #2563eb;
+  }
+  

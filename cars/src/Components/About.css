@@ -1,0 +1,147 @@
+.about-container {
+  padding: 3rem 1rem;
+  background: #f9fafb;
+}
+
+.about-header {
+  margin-bottom: 2rem;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.about-subtitle {
+  font-size: 1.2rem;
+  color: #6b7280;
+}
+
+.about-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.about-highlight {
+  font-weight: 600;
+  color: #16a34a;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.about-extra h3 {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.about-extra ul {
+  margin-top: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.about-extra li {
+  margin: 0.3rem 0;
+}
+
+/* CTA Button */
+.book-btn {
+  background: linear-gradient(90deg, #2563eb, #9333ea);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.book-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #9333ea, #2563eb);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Services Section */
+.services-section {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.services-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #111827;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Flip Card Styles */
+.flip-card {
+  background: transparent;
+  width: 220px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.flip-card-front {
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-back {
+  background: #f3f4f6;
+  color: #111827;
+  transform: rotateY(180deg);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
