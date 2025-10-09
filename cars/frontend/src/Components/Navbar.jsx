@@ -27,8 +27,8 @@ const Navbar = () => {
           <li><Link to="/cars">Cars</Link></li>
           <li><Link to="/about">About Us</Link></li>
           <li><Link to="/contact">Contact Us</Link></li>
-          <li><Link to="/login">Login</Link></li>
-          <li><Link to="/admin">Admin</Link></li>
+          <li><Link to="/admindashboard">Dashboard</Link></li>
+          <li><Link to="/imageuploader">IMAGE</Link></li>
    
 
         </ul>

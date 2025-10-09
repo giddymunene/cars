@@ -8,9 +8,10 @@ import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Register from "./Components/Register";
 import Login from "./Components/Login";
-import AdminDashboard from "./Components/AdminMessages";
+import AdminDashboard from "./Components/AdminDashboard";
 import Footer from "./Components/Footer";
 import Booking from "./Components/Booking";
+import ImageUploader from "./Components/ImageUploader";
 import "./App.css";
 
 // 🔹 This component checks the current route and redirects if needed
@@ -48,6 +49,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/imageuploader" element={<ImageUploader />} />
 
         {/* 404 fallback */}
         <Route

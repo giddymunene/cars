@@ -1,32 +1,54 @@
 import express from "express";
+import multer from "multer";
 import Car from "../models/Car.js";
-import authMiddleware from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-// Get all cars (public)
+// Multer config - store files in 'uploads' folder
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, "uploads/"),
+  filename: (req, file, cb) =>
+    cb(null, Date.now() + "-" + file.originalname),
+});
+
+const upload = multer({ storage });
+
+// POST: Add new car
+router.post("/", upload.single("image"), async (req, res) => {
+  try {
+    const { car, model, price } = req.body;
+    const imageUrl = `http://localhost:5000/uploads/${req.file.filename}`;
+
+    const newCar = new Car({ car, model, price, imageUrl });
+    await newCar.save();
+
+    res.status(201).json({ message: "Car added successfully!", car: newCar });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Failed to add car" });
+  }
+});
+
+
+// GET: All cars
 router.get("/", async (req, res) => {
-  const cars = await Car.find();
-  res.json(cars);
+  try {
+    const cars = await Car.find().sort({ createdAt: -1 });
+    res.json(cars);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to fetch cars" });
+  }
 });
 
-// Add a new car (admin only)
-router.post("/", authMiddleware("admin"), async (req, res) => {
-  const car = new Car(req.body);
-  await car.save();
-  res.json(car);
+// routes/cars.js
+router.delete("/:id", async (req, res) => {
+  try {
+    await Car.findByIdAndDelete(req.params.id);
+    res.status(200).json({ message: "Car deleted successfully" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
-// Edit a car (admin only)
-router.put("/:id", authMiddleware("admin"), async (req, res) => {
-  const car = await Car.findByIdAndUpdate(req.params.id, req.body, { new: true });
-  res.json(car);
-});
-
-// Delete a car (admin only)
-router.delete("/:id", authMiddleware("admin"), async (req, res) => {
-  await Car.findByIdAndDelete(req.params.id);
-  res.json({ message: "Car deleted" });
-});
 
 export default router;

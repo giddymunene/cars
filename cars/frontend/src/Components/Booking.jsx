@@ -57,7 +57,7 @@ function Booking() {
       {car && (
         <div className="booking-car-details">
           <h3>{car.year} {car.make} {car.model}</h3>
-          <p>💰 Price: ${car.price}</p>
+          <p>💰 RATE/DAY: KES{car.price}</p>
           <p>📍 Location: Mombasa, Kenya</p>
         </div>
       )}

@@ -1,182 +1,187 @@
-/* Container */
+/* ===== General Container ===== */
 .cars-container {
-    padding: 2rem;
-    background: #f9fafb;
-    min-height: 100vh;
-  }
-  
-  /* Header */
-  .cars-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-  
-  .cars-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #2563eb;
-  }
-  
-  .auth-btn {
-    padding: 0.5rem 1.25rem;
-    border: none;
-    border-radius: 8px;
-    background: #2563eb;
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s ease;
-  }
-  
-  .auth-btn:hover {
-    background: #1d4ed8;
-  }
-  
-  .auth-btn.logout {
-    background: #6b7280;
-  }
-  
-  .auth-btn.logout:hover {
-    background: #4b5563;
-  }
-  
-  .auth-btn.danger {
-    background: #dc2626;
-  }
-  
-  .auth-btn.danger:hover {
-    background: #b91c1c;
-  }
-  
-  /* Search Info */
-  .search-info {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    color: #374151;
-  }
-  
-  /* Cars Grid */
-  .cars-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  /* Card wrapper (flip effect for users only) */
-  .car-card {
-    perspective: 1000px;
-    border-radius: 12px;
-    position: relative;
-  }
-  
-  .car-inner {
-    position: relative;
-    width: 100%;
-    height: 360px;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-  }
-  
-  .car-card:hover .car-inner {
-    transform: rotateY(180deg);
-  }
-  
-  /* Front side */
-  .car-front, .car-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    backface-visibility: hidden;
-    overflow: hidden;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-    background: #fff;
-  }
-  
-  .car-front {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .car-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .car-details {
-    padding: 1rem;
-  }
-  
-  .car-details h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #1f2937;
-  }
-  
-  .car-price {
-    font-size: 1rem;
-    color: #16a34a;
-    font-weight: 600;
-  }
-  
-  /* Back side (details for users) */
-  .car-back {
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 1rem;
-    background: #f3f4f6;
-  }
-  
-  .car-back h4 {
-    color: #2563eb;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-  
-  .car-back p {
-    color: #374151;
-    margin: 0.25rem 0;
-  }
-  
-  /* Admin Add Form */
-  .add-car-form {
-    margin-top: 3rem;
-    padding: 2rem;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-  }
-  
-  .form-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1.25rem;
-    color: #2563eb;
-  }
-  
-  .form-row {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .form-row input {
-    flex: 1;
-    padding: 0.75rem;
-    border-radius: 8px;
-    border: 1px solid #d1d5db;
-    transition: border 0.2s ease;
-  }
-  
-  .form-row input:focus {
-    outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
-  }
-  
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.cars-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* ===== Grid Layout ===== */
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.no-cars {
+  text-align: center;
+  color: #777;
+  font-size: 1.2rem;
+}
+
+/* ===== Car Card ===== */
+.car-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.car-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.car-details {
+  padding: 1rem 1.2rem;
+  text-align: center;
+}
+
+.car-details h3 {
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.car-model {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.car-price {
+  color: #188038;
+  font-weight: 700;
+  margin: 0.8rem 0;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.book-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.book-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.delete-btn:hover {
+  background-color: #b02a37;
+}
+
+/* ===== Modal Overlay ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+/* ===== Booking Modal ===== */
+.booking-modal {
+  background: white;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 420px;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 1.4rem;
+  color: #666;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  color: #111;
+}
+
+.modal-title {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* ===== Booking Form ===== */
+.booking-form input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.booking-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.date-fields {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.confirm-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.confirm-btn:hover {
+  background-color: #1e7e34;
+}

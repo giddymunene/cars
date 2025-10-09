@@ -2,31 +2,32 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-
-import authRoutes from "./routes/auth.js";
+import path from "path";
+import { fileURLToPath } from "url";
 import carRoutes from "./routes/cars.js";
-import messageRoutes from "./routes/messages.js";
+import adminAuthRoutes from "./routes/adminAuth.js";
+
 
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 5000;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Middleware
-app.use(cors({ origin: "http://localhost:3000", credentials: true })); 
+app.use(cors());
 app.use(express.json());
-
-// Routes
-app.use("/api/auth", authRoutes);
+app.use("/uploads", express.static(path.join(__dirname, "uploads"))); // serve images
 app.use("/api/cars", carRoutes);
-app.use("/api/messages", messageRoutes);
+app.use("/api/admin", adminAuthRoutes);
+
 
 // MongoDB connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose
+  .connect(process.env.MONGO_URI)
   .then(() => {
-    console.log("✅ MongoDB connected");
-    app.listen(5000, () => console.log("🚀 Server running on port 5000"));
+    console.log("✅ MongoDB Connected");
+    app.listen(PORT, () => console.log(`🚗 Server running on port ${PORT}`));
   })
-  .catch(err => console.error("MongoDB connection error:", err));
+  .catch((err) => console.error("MongoDB Error:", err));
