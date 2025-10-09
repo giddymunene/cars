@@ -36,6 +36,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: all 0.3s ease;
+  height: 400px;
 }
 
 .car-card:hover {
@@ -150,38 +151,29 @@
   font-weight: 600;
 }
 
-/* ===== Booking Form ===== */
-.booking-form input {
-  width: 100%;
-  padding: 0.6rem;
-  margin-bottom: 1rem;
+.price-filter {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.price-filter label {
+  color: #333;
+  font-weight: 600;
+}
+
+.price-filter input {
+  margin-left: 8px;
+  padding: 6px 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  font-size: 0.95rem;
-  transition: border-color 0.2s ease;
+  width: 120px;
 }
 
-.booking-form input:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
-.date-fields {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.confirm-btn {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 0.7rem;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.25s ease;
-}
-
-.confirm-btn:hover {
-  background-color: #1e7e34;
+.no-cars {
+  text-align: center;
+  color: #888;
+  margin-top: 30px;
+  font-size: 1.2rem;
 }

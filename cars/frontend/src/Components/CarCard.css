@@ -1,5 +1,5 @@
 
-  .car-card {
+  .carcard {
     width: 220px;  /* fixed width for uniform row layout */
     height: 250px; /* consistent height */
     perspective: 1000px;
@@ -13,7 +13,7 @@
     transform-style: preserve-3d;
   }
   
-  .car-card:hover .card-inner {
+  .carcard:hover .card-inner {
     transform: rotateY(180deg);
   }
   

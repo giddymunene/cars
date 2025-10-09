@@ -3,7 +3,7 @@ import "./CarCard.css";
 
 const CarCard = ({ image, title, description }) => {
   return (
-    <div className="car-card">
+    <div className="carcard">
       <div className="card-inner">
         {/* Front Side */}
         <div className="card-front">
