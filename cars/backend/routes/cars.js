@@ -4,51 +4,28 @@ import Car from "../models/Car.js";
 
 const router = express.Router();
 
-// Multer config - store files in 'uploads' folder
+// Setup multer for memory storage
 const storage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, "uploads/"),
   filename: (req, file, cb) =>
     cb(null, Date.now() + "-" + file.originalname),
 });
-
 const upload = multer({ storage });
 
-// POST: Add new car
+// POST - Add car with image
 router.post("/", upload.single("image"), async (req, res) => {
   try {
-    const { car, model, price } = req.body;
-    const imageUrl = `http://localhost:5000/uploads/${req.file.filename}`;
+    const { make, model, price } = req.body;
+    const imagePath = req.file ? `uploads/${req.file.filename}` : null;
 
-    const newCar = new Car({ car, model, price, imageUrl });
+    const newCar = new Car({ make, model, price, image: imagePath });
     await newCar.save();
 
-    res.status(201).json({ message: "Car added successfully!", car: newCar });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Failed to add car" });
-  }
-});
-
-
-// GET: All cars
-router.get("/", async (req, res) => {
-  try {
-    const cars = await Car.find().sort({ createdAt: -1 });
-    res.json(cars);
-  } catch (error) {
-    res.status(500).json({ message: "Failed to fetch cars" });
-  }
-});
-
-// routes/cars.js
-router.delete("/:id", async (req, res) => {
-  try {
-    await Car.findByIdAndDelete(req.params.id);
-    res.status(200).json({ message: "Car deleted successfully" });
+    res.status(201).json(newCar);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error("❌ Upload error:", err);
+    res.status(500).json({ error: "Failed to upload car" });
   }
 });
-
 
 export default router;

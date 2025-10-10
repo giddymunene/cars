@@ -1,0 +1,97 @@
+.manage-cars-container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  background: #f9fafb;
+  border-radius: 12px;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.add-car-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-car-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.upload-label {
+  background-color: #2563eb;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.image-preview {
+  width: 120px;
+  height: 100px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.upload-btn {
+  background-color: #16a34a;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.upload-btn:hover {
+  background-color: #15803d;
+}
+
+.cars-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.cars-table th,
+.cars-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.cars-table th {
+  background: #6095ca;
+}
+
+.car-image {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.delete-btn {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #b91c1c;
+}

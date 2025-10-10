@@ -1,0 +1,39 @@
+.messages-page {
+    padding: 40px;
+    background-color: #f9fafc;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .messages-page h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #0f172a;
+    margin-bottom: 25px;
+  }
+  
+  .message-list {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .message-list li {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+  }
+  
+  .message-list strong {
+    color: #007bff;
+    font-weight: 600;
+  }
+  
+  .message-list p {
+    margin: 8px 0 0;
+    color: #334155;
+  }
+  

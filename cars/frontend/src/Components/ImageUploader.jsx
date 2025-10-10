@@ -99,7 +99,7 @@ const CarUploader = () => {
 
         <button
           type="submit"
-          className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700"
+          className="btn btn-success"
         >
           Upload Car
         </button>

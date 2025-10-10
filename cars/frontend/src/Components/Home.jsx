@@ -14,6 +14,9 @@ const Home = () => {
     "https://images.unsplash.com/photo-1503376780353-7e6692767b70",
     "https://images.unsplash.com/photo-1511910849309-0f35a5c9f33b",
     "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7",
+    "https://cdn.pixabay.com/photo/2017/03/27/14/56/auto-2179220_1280.jpg",
+    "https://cdn.pixabay.com/photo/2018/02/21/03/15/bmw-m4-3169357_1280.jpg",
+    
   ];
 
   // Change background every 5 seconds
